@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3da3710b2567f6e4eb28cebdcadb5531
+guid: f840ddf8f3cf32e4d812ee5ff1795069
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Back_0
+      name: Credits3_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 52
-        width: 32
-        height: 11
+        x: 16
+        y: 54
+        width: 92
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,29 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3780ef8458b0c5548bbb82cda707b79a
-      internalID: -1040215920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Back_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 25
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bdd22feb8df2944ca284094ad2b22f5
-      internalID: -2049549542
+      spriteID: 1eefc11b648769c41a331929103ee46c
+      internalID: 568059703
       vertices: []
       indices: 
       edges: []
@@ -168,8 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Back_0: -1040215920
-      Back_1: -2049549542
+      Credits3_0: 568059703
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
