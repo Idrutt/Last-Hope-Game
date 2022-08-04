@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool doubleJump;
 
+    bool HasdoubleJump = false;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsGrounded() && !Input.GetButton("Jump"))
         {
-            doubleJump = false;
+           doubleJump = false;
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -31,7 +33,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
 
-                doubleJump = !doubleJump;
+                if (HasdoubleJump == true)
+                {
+                    doubleJump = !doubleJump;
+                }
             }
         }
 
@@ -64,6 +69,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //animator.SetFloat("Speed", Mathf.Abs(horizontal));
+    }
+
+    public void ActivateDoubleJump()
+    {
+
+        HasdoubleJump = true;
+        
     }
 }
 
