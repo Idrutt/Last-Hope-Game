@@ -1,38 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
-    //private Animator anim;
-    private bool dead;
+    public int curHealth = 0;
+    public int maxHealth = 100;
+   
+    public HealthBar healthBar;
+  
+    
 
-    private void Awake()
+    public UnityEvent onDeath;
+
+    void Start()
     {
-        currentHealth = startingHealth;
-        //anim = GetComponent<Animator>();
+        curHealth = maxHealth;
     }
-    public void TakeDamage(float _damage)
-    {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth > 0)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            //anim.SetTrigger("hurt");
-            //iframes
+            DamagePlayer(10);
         }
-        else
+
+        if (curHealth <= 0)
         {
-            if (!dead)
-            {
-                //anim.SetTrigger("die");
-                GetComponent<PlayerMovement>().enabled = false;
-                dead = true;
-            }
+            onDeath.Invoke();
         }
     }
-    public void AddHealth(float _value)
+
+    public void DamagePlayer(int damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        curHealth -= damage;
+
+        healthBar.SetHealth(curHealth);
     }
+    public void HealPlayer(int Healing)
+    {
+        curHealth += Healing;
+
+        healthBar.SetHealth(curHealth);
+    }
+   
+
+
 }
