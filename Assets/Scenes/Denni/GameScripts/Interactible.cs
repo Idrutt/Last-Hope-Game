@@ -8,16 +8,16 @@ public class Interactible : MonoBehaviour
     public UnityEvent OnEnter;
     public UnityEvent OnExit;
 
-    
+
     void Start()
     {
-       
+
     }
 
-  
+
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,4 +35,6 @@ public class Interactible : MonoBehaviour
             OnExit.Invoke();
         }
     }
+
+
 }
