@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool HasdoubleJump = false;
 
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -77,5 +78,6 @@ public class PlayerMovement : MonoBehaviour
         HasdoubleJump = true;
         
     }
+
 }
 

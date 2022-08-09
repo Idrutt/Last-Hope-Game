@@ -8,23 +8,19 @@ public class Interactible : MonoBehaviour
     public UnityEvent OnEnter;
     public UnityEvent OnExit;
 
-
-    void Start()
-    {
-
-    }
+    public UnityEvent RespawnPoint;
 
 
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             OnEnter.Invoke();
+        }
+        if (collision.CompareTag("Respawn"))
+        {
+            RespawnPoint.Invoke();
         }
     }
 

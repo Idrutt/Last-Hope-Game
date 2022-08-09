@@ -9,8 +9,14 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
    
     public HealthBar healthBar;
-  
-    
+
+
+    public Transform Player;
+
+
+    public Transform respawnhere;
+    public bool Isdead = false;
+
 
     public UnityEvent onDeath;
 
@@ -29,6 +35,13 @@ public class Health : MonoBehaviour
         if (curHealth <= 0)
         {
             onDeath.Invoke();
+            Isdead = true;
+            if (Isdead == true)
+            {
+                PlayerDied();
+                Isdead = false;
+            }
+            
         }
     }
 
@@ -44,7 +57,13 @@ public class Health : MonoBehaviour
 
         healthBar.SetHealth(curHealth);
     }
-   
+
+    public void PlayerDied()
+    {
+        this.transform.position = respawnhere.transform.position;
+    }
+
+
 
 
 }
