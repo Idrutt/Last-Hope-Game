@@ -66,12 +66,13 @@ public class Health : MonoBehaviour
 
     public void PlayerDied()
     {
-     
+        new WaitForSeconds(3);
         onRespawn.Invoke();
         this.transform.position = respawnHere.transform.position;
         curHealth = 100;
         healthBar.SetHealth(curHealth);
         respawnButton.SetActive(false);
+
     }
 
 
