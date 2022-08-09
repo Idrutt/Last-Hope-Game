@@ -5,28 +5,25 @@ using UnityEngine.Events;
 
 public class RespawnPoint : MonoBehaviour
 {
-    Health Playerscript;
-    [SerializeField] Transform checkpoint;
+    Health PlayerScript;
 
-    bool istaken = false;
+    [SerializeField] Transform checkPoint1;
 
-    // Start is called before the first frame update
+    public bool istaken = false;
+
     private void Start()
     {
-        checkpoint = GetComponent<Transform>();
+        checkPoint1 = GetComponent<Transform>();
 
-        Playerscript = GameObject.FindObjectOfType<Health>();
+        PlayerScript = GameObject.FindObjectOfType<Health>();
     }
 
-    // Update is called once per frame
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && istaken == false)
         {
-
-            Playerscript.respawnhere.transform.position = checkpoint.position;
+            PlayerScript.respawnHere.transform.position = checkPoint1.position;
             istaken = true;
         }
-        
     }
 }

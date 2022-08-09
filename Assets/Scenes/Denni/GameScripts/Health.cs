@@ -14,15 +14,21 @@ public class Health : MonoBehaviour
     public Transform Player;
 
 
-    public Transform respawnhere;
+    public Transform respawnHere;
     public bool Isdead = false;
 
 
     public UnityEvent onDeath;
+    public UnityEvent onRespawn;
+
+   GameObject respawnButton;
 
     void Start()
     {
         curHealth = maxHealth;
+
+        respawnButton = GameObject.FindWithTag("RespawnButton");
+        respawnButton.SetActive(false);
     }
 
     void Update()
@@ -35,13 +41,8 @@ public class Health : MonoBehaviour
         if (curHealth <= 0)
         {
             onDeath.Invoke();
-            Isdead = true;
-            if (Isdead == true)
-            {
-                PlayerDied();
-                Isdead = false;
-            }
             
+            respawnButton.SetActive(true);
         }
     }
 
@@ -53,14 +54,24 @@ public class Health : MonoBehaviour
     }
     public void HealPlayer(int Healing)
     {
-        curHealth += Healing;
+        
+        if(curHealth <= 75)
+        {
+            curHealth += Healing;
+        }
+        
 
         healthBar.SetHealth(curHealth);
     }
 
     public void PlayerDied()
     {
-        this.transform.position = respawnhere.transform.position;
+     
+        onRespawn.Invoke();
+        this.transform.position = respawnHere.transform.position;
+        curHealth = 100;
+        healthBar.SetHealth(curHealth);
+        respawnButton.SetActive(false);
     }
 
 
