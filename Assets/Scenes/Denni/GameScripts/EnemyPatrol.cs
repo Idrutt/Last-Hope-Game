@@ -59,7 +59,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //collision.GetComponent<Health>().TakeDamage(damage);
+            collision.GetComponent<Health>().DamagePlayer(0);
         }
     }
 
