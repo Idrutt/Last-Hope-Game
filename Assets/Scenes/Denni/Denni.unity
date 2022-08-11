@@ -2007,10 +2007,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1433393326}
-  attackTime: 0
+  attackTime: 0.6
   startTimeAttack: 0
   attackLocation: {fileID: 1310616329}
-  attackRange: 0
+  attackRange: 0.4
   enemies:
     serializedVersion: 2
     m_Bits: 128
