@@ -55,12 +55,12 @@ public class EnemyPatrol : MonoBehaviour
         _isFacingRight = transform.localScale.x > 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            collision.GetComponent<Health>().DamagePlayer(0);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+  //  {
+   //     if (collision.tag == "Player")
+   //     {
+   //         collision.GetComponent<Health>().DamagePlayer(0);
+   //     }
+  //  }
 
 }

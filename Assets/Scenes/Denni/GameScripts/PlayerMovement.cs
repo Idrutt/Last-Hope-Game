@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         Flip();
 
-        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), enColliderr.GetComponent<CapsuleCollider2D>());
+        
     }
 
     private void FixedUpdate()
@@ -88,6 +88,12 @@ public class PlayerMovement : MonoBehaviour
 
         HasdoubleJump = true;
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {      
+      // Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), enColliderr.GetComponent<CapsuleCollider2D>());
+        Physics2D.IgnoreLayerCollision(1, 7, true);
     }
 
 }
