@@ -13,12 +13,20 @@ public class PlayerMovement : MonoBehaviour
 
     bool HasdoubleJump = false;
 
+    private Collider2D plCollider;
+    private GameObject enColliderr;
+
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     //[SerializeField] private Animator animator;
 
+
+    private void Start()
+    {
+        enColliderr = GameObject.FindWithTag("Enemy");
+    }
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -47,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+
+        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), enColliderr.GetComponent<CapsuleCollider2D>());
     }
 
     private void FixedUpdate()
@@ -71,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
         //animator.SetFloat("Speed", Mathf.Abs(horizontal));
     }
+    
 
     public void ActivateDoubleJump()
     {
