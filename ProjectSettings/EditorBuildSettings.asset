@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: ee6673e2bffe52a47bf8cd589993c3f4
+  - enabled: 1
+    path: Assets/Scenes/Idrutt_Profiles/End.unity
+    guid: 5ba7310ed251fb545841d57feda82954
   m_configObjects: {}
