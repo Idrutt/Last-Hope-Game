@@ -19,7 +19,7 @@ public class EnemyPatrol : MonoBehaviour
         enemyRigidBody2D = GetComponent<Rigidbody2D>();
         _startPos = transform.position.x;
         _endPos = _startPos + UnitsToMove;
-        _isFacingRight = transform.localScale.x > 0;
+        _isFacingRight = transform.localScale.x > -1;
     }
 
 
