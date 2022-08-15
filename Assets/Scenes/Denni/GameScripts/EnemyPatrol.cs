@@ -9,13 +9,17 @@ public class EnemyPatrol : MonoBehaviour
     public bool _isFacingRight;
     private float _startPos;
     private float _endPos;
+    public int EnemyDamage;
 
     public bool _moveRight = true;
 
+    Health playerHealth;
+    
 
     // Use this for initialization
     public void Awake()
     {
+        playerHealth = GameObject.FindObjectOfType<Health>();
         enemyRigidBody2D = GetComponent<Rigidbody2D>();
         _startPos = transform.position.x;
         _endPos = _startPos + UnitsToMove;
@@ -29,7 +33,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if (_moveRight)
         {
-            enemyRigidBody2D.AddForce(Vector2.right * EnemySpeed * Time.deltaTime);
+            enemyRigidBody2D.transform.Translate(Vector2.right * EnemySpeed * Time.deltaTime);
             if (!_isFacingRight)
                 Flip();
         }
@@ -39,7 +43,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if (!_moveRight)
         {
-            enemyRigidBody2D.AddForce(-Vector2.right * EnemySpeed * Time.deltaTime);
+            enemyRigidBody2D.transform.Translate(-Vector2.right * EnemySpeed * Time.deltaTime);
             if (_isFacingRight)
                 Flip();
         }
@@ -55,12 +59,7 @@ public class EnemyPatrol : MonoBehaviour
         _isFacingRight = transform.localScale.x > 0;
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-  //  {
-   //     if (collision.tag == "Player")
-   //     {
-   //         collision.GetComponent<Health>().DamagePlayer(0);
-   //     }
-  //  }
 
+
+   
 }

@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     public int curHealth = 0;
     public int maxHealth = 100;
-   
+
     public HealthBar healthBar;
 
 
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     public UnityEvent onDeath;
     public UnityEvent onRespawn;
 
-   GameObject respawnButton;
+    GameObject respawnButton;
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
         if (curHealth <= 0)
         {
             onDeath.Invoke();
-            
+
             respawnButton.SetActive(true);
         }
     }
@@ -54,12 +54,12 @@ public class Health : MonoBehaviour
     }
     public void HealPlayer(int Healing)
     {
-        
-        if(curHealth <= 75)
+
+        if (curHealth <= 75)
         {
             curHealth += Healing;
         }
-        
+
 
         healthBar.SetHealth(curHealth);
     }
@@ -74,8 +74,5 @@ public class Health : MonoBehaviour
         respawnButton.SetActive(false);
 
     }
-
-
-
 
 }

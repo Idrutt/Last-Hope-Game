@@ -58,9 +58,6 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Physics2D.IgnoreCollision(CapsuleCollider, playerScript.GetComponent<BoxCollider2D>());
-    }
+   
 
 }
