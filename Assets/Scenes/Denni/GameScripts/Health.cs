@@ -33,10 +33,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DamagePlayer(10);
-        }
+       
 
         if (curHealth <= 0)
         {
