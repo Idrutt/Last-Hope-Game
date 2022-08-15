@@ -15,7 +15,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.tag == ("Player"))//or tag
         {
-            print("hello");
+            
             playerHealth.DamagePlayer(25);
 
         }

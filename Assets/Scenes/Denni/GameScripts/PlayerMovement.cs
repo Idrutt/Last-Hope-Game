@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
+    private string currentAnimation;
+    private Animator animator;
 
     private bool doubleJump;
 
