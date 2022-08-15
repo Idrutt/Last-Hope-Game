@@ -10,8 +10,10 @@ public class EnemyPatrol : MonoBehaviour
     private float _startPos;
     private float _endPos;
     public int EnemyDamage;
+    private string currentAnimation;
 
     public bool _moveRight = true;
+    Animator animator;
 
     Health playerHealth;
     
@@ -25,6 +27,17 @@ public class EnemyPatrol : MonoBehaviour
         _endPos = _startPos + UnitsToMove;
         _isFacingRight = transform.localScale.x > -1;
     }
+
+    public void ChangeAnimationState(string newState)
+    {
+        if (currentAnimation == newState) return;
+        animator.Play(newState);
+    }
+
+    //Animationstates
+
+    const string BigRat = "Big rat";
+
 
 
     // Update is called once per frame

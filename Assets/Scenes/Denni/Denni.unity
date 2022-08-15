@@ -259,6 +259,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 471555518}
   playerHealth: {fileID: 2038590669}
+--- !u!1 &484321807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7856690056135446649, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+  m_PrefabInstance: {fileID: 1981078332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598533683
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +939,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &918381095
 BoxCollider2D:
@@ -1526,12 +1531,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2038590668}
     - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 484321807}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ActivateDoubleJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856690056135446648, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7856690056135446649, guid: 4f95d5f11e9a4a2488ce2a7d7d299d67, type: 3}
       propertyPath: m_Name
@@ -1874,7 +1907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3397252960343127538, guid: b4bc59b1d9cb7d1479ad253b05edfbfb, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3397252960343127538, guid: b4bc59b1d9cb7d1479ad253b05edfbfb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1929,6 +1962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5462533917633643905, guid: 7f5627b8073dc264c8f482d7fdd03e70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.76
+      objectReference: {fileID: 0}
     - target: {fileID: 5462533918271703056, guid: 7f5627b8073dc264c8f482d7fdd03e70, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2151,6 +2188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1048873301182898069, guid: 5204f6db8bf6f5049bbb2a4c21473791, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7257432389848289137, guid: 5204f6db8bf6f5049bbb2a4c21473791, type: 3}
       propertyPath: m_RootOrder
       value: 13
