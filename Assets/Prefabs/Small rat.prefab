@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitsToMove: 3
-  EnemySpeed: 1
+  EnemySpeed: 2
   _isFacingRight: 0
   EnemyDamage: 0
   _moveRight: 1
