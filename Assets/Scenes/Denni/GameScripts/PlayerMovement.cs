@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     //AnimationStates
 
     const string PLAYER_IDLE = "Player_Idlean";
-
+    const string PLAYER_RUNNING = "Player_runningan";
 
 
 
