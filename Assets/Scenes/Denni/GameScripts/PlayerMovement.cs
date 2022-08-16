@@ -9,10 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
     private string currentAnimation;
-    private Animator animator;
-
     private bool doubleJump;
-
     bool HasdoubleJump = false;
 
     private Collider2D plCollider;
@@ -22,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    //[SerializeField] private Animator animator;
+    [SerializeField] private Animator animator;
 
 
     private void Start()
@@ -61,6 +58,19 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    public void ChangeAnimationState(string newState)
+    {
+        if (currentAnimation == newState) return;
+        animator.Play(newState);
+    }
+
+    //AnimationStates
+
+    const string PLAYER_IDLE = "Player_Idlean";
+
+
+
+
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
@@ -82,6 +92,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        
     }
     
 
@@ -97,6 +109,9 @@ public class PlayerMovement : MonoBehaviour
       // Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), enColliderr.GetComponent<CapsuleCollider2D>());
         Physics2D.IgnoreLayerCollision(1, 7, true);
     }
+
+
+    
 
 }
 
