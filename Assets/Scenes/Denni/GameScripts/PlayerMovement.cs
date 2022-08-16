@@ -53,12 +53,21 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        if (rb.velocity.x != 0)
+        if (IsGrounded())
         {
-            ChangeAnimationState(RUNNING);
-        }
 
-        else 
+
+
+            if (rb.velocity.x != 0)
+            {
+                ChangeAnimationState(RUNNING);
+            }
+
+            else       
+            {
+                ChangeAnimationState(IDLE);
+            }
+        }
 
         Flip();
 
@@ -73,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
     //AnimationStates
 
-    const string PLAYER_IDLE = "Player_Idlean";
+    const string IDLE = "Idle";
     const string RUNNING = "running";
 
 
